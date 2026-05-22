@@ -2,25 +2,181 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Composer Portfolio — Original Music for Film & Games" },
+      {
+        name: "description",
+        content:
+          "Original scores and sound design for video games and films. Selected reels, projects and biography.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const selectedWorks = [
+  { title: "Aetherbound", role: "Original Score", year: "2025", type: "Video Game" },
+  { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
+  { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
+  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
+  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
+  { title: "Paper Lanterns", role: "Original Score", year: "2022", type: "Documentary" },
+];
+
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      {/* NAV */}
+      <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <a href="#top" className="text-sm tracking-[0.3em] uppercase">
+            <span className="text-gold">●</span>&nbsp;&nbsp;Composer
+          </a>
+          <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
+            <li><a href="#about" className="hover:text-gold transition-colors">About</a></li>
+            <li><a href="#reels" className="hover:text-gold transition-colors">Reels</a></li>
+            <li><a href="#works" className="hover:text-gold transition-colors">Works</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* HERO / INTRO */}
+      <section id="top" className="relative flex min-h-screen items-center px-6 pt-32">
+        <div className="mx-auto w-full max-w-6xl">
+          <p className="mb-8 text-xs tracking-[0.4em] uppercase text-gold">
+            Composer · Film & Video Games
+          </p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight leading-[1.05] tracking-tight">
+            Sound that <span className="text-gold italic font-thin">moves</span>
+            <br />
+            the picture.
+          </h1>
+          <div className="mt-16 h-px w-24 bg-gold" />
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="px-6 py-32 border-t border-border">
+        <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="text-xs tracking-[0.4em] uppercase text-gold">01 — About</p>
+            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Biography</h2>
+          </div>
+          <div className="md:col-span-8 space-y-6 text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+            <p>
+              I'm a composer writing original music for video games, films and trailers.
+              My work lives at the intersection of orchestral writing and contemporary
+              electronic textures — scores built to disappear into the picture and surface
+              only when the story needs them to.
+            </p>
+            <p>
+              Over the last decade I've collaborated with independent studios, AAA
+              publishers and directors across documentary and narrative film, shaping
+              sonic identities for worlds that range from intimate character drama to
+              large-scale interactive adventures.
+            </p>
+            <p>
+              Trained classically and obsessed with synthesis, I treat every project as a
+              new instrument — built from the inside out.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* REELS */}
+      <section id="reels" className="px-6 py-32 border-t border-border">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16">
+            <p className="text-xs tracking-[0.4em] uppercase text-gold">02 — Reels</p>
+            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Showreels</h2>
+          </div>
+
+          <div className="grid gap-16 md:grid-cols-2">
+            <ReelCard
+              label="Video Game Reel"
+              year="2025"
+              videoId="dQw4w9WgXcQ"
+            />
+            <ReelCard
+              label="Film & Trailer Reel"
+              year="2025"
+              videoId="dQw4w9WgXcQ"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* WORKS */}
+      <section id="works" className="px-6 py-32 border-t border-border">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16">
+            <p className="text-xs tracking-[0.4em] uppercase text-gold">03 — Works</p>
+            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Selected Projects</h2>
+          </div>
+
+          <ul className="divide-y divide-border border-y border-border">
+            {selectedWorks.map((w) => (
+              <li
+                key={w.title}
+                className="group grid grid-cols-12 items-baseline gap-4 py-6 transition-colors hover:bg-card/40 px-2"
+              >
+                <span className="col-span-1 text-xs text-gold tracking-widest">{w.year}</span>
+                <h3 className="col-span-6 md:col-span-5 text-xl md:text-2xl font-extralight tracking-wide group-hover:text-gold transition-colors">
+                  {w.title}
+                </h3>
+                <span className="col-span-3 hidden md:inline text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                  {w.role}
+                </span>
+                <span className="col-span-5 md:col-span-3 text-right text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                  {w.type}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-border px-6 py-12">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-xs tracking-[0.3em] uppercase text-muted-foreground md:flex-row">
+          <p>© {new Date().getFullYear()} Composer</p>
+          <p>
+            <a href="mailto:hello@composer.com" className="hover:text-gold transition-colors">
+              hello@composer.com
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
 
-function Index() {
-  return <PlaceholderIndex />;
+function ReelCard({
+  label,
+  year,
+  videoId,
+}: {
+  label: string;
+  year: string;
+  videoId: string;
+}) {
+  return (
+    <div className="group">
+      <div className="relative aspect-video overflow-hidden border border-border bg-card">
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title={label}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <div className="mt-4 flex items-baseline justify-between">
+        <h3 className="text-sm md:text-base tracking-[0.25em] uppercase font-light">
+          {label}
+        </h3>
+        <span className="text-xs text-gold tracking-widest">{year}</span>
+      </div>
+    </div>
+  );
 }
