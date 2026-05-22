@@ -1,14 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logoMark from "@/assets/logo-mark.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Composer Portfolio — Original Music for Film & Games" },
+      { title: "Lucas Mercanti Music — Original Scores for Film & Games" },
       {
         name: "description",
         content:
-          "Original scores and sound design for video games and films. Selected reels, projects and biography.",
+          "Lucas Mercanti — composer of original music for video games and films. Selected reels, projects and biography.",
       },
     ],
   }),
@@ -28,9 +29,17 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
       <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a href="#top" className="text-sm tracking-[0.3em] uppercase">
-            <span className="text-gold">●</span>&nbsp;&nbsp;Composer
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#top" className="flex items-center gap-3">
+            <img
+              src={logoMark}
+              alt="Lucas Mercanti Music"
+              className="h-10 w-10 object-contain"
+            />
+            <span className="hidden sm:flex flex-col leading-tight">
+              <span className="text-sm tracking-[0.3em] uppercase font-light">Lucas Mercanti</span>
+              <span className="text-[10px] tracking-[0.45em] uppercase text-gold">Music</span>
+            </span>
           </a>
           <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
             <li><a href="#about" className="hover:text-gold transition-colors">About</a></li>
@@ -43,8 +52,13 @@ function Index() {
       {/* HERO / INTRO */}
       <section id="top" className="relative flex min-h-screen items-center px-6 pt-32">
         <div className="mx-auto w-full max-w-6xl">
+          <img
+            src={logoMark}
+            alt="Lucas Mercanti Music"
+            className="mb-10 h-20 w-20 md:h-24 md:w-24 object-contain"
+          />
           <p className="mb-8 text-xs tracking-[0.4em] uppercase text-gold">
-            Composer · Film & Video Games
+            Lucas Mercanti · Composer for Film & Video Games
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight leading-[1.05] tracking-tight">
             Sound that <span className="text-gold italic font-thin">moves</span>
@@ -140,10 +154,13 @@ function Index() {
       {/* FOOTER */}
       <footer className="border-t border-border px-6 py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-xs tracking-[0.3em] uppercase text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Composer</p>
+          <div className="flex items-center gap-3">
+            <img src={logoMark} alt="" className="h-6 w-6 object-contain" />
+            <p>© {new Date().getFullYear()} Lucas Mercanti Music</p>
+          </div>
           <p>
-            <a href="mailto:hello@composer.com" className="hover:text-gold transition-colors">
-              hello@composer.com
+            <a href="mailto:hello@lucasmercanti.com" className="hover:text-gold transition-colors">
+              hello@lucasmercanti.com
             </a>
           </p>
         </div>
