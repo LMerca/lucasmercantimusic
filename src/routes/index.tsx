@@ -156,17 +156,23 @@ function ReelCard({
   label,
   year,
   videoId,
+  start,
 }: {
   label: string;
   year: string;
   videoId: string;
+  start?: number;
 }) {
+  const embedSrc = start
+    ? `https://www.youtube.com/embed/${videoId}?start=${start}`
+    : `https://www.youtube.com/embed/${videoId}`;
+
   return (
     <div className="group">
       <div className="relative aspect-video overflow-hidden border border-border bg-card">
         <iframe
           className="absolute inset-0 h-full w-full"
-          src={`https://www.youtube.com/embed/${videoId}`}
+          src={embedSrc}
           title={label}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
