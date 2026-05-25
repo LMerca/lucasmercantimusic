@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoMark from "@/assets/logo-mark.png";
+import logoMark from "@/assets/logo-mark-new.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -29,7 +29,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
       <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 bg-[#e8e8e8]">
           <a href="#top" className="flex items-center gap-3">
             <img
               src={logoMark}
