@@ -17,8 +17,22 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const selectedWorks = [
-  { title: "Aetherbound", role: "Original Score", year: "2025", type: "Video Game" },
+type Work = {
+  title: string;
+  role: string;
+  year: string;
+  type: string;
+  audio?: string;
+};
+
+const selectedWorks: Work[] = [
+  {
+    title: "We Are the Word — Espera",
+    role: "Original Score",
+    year: "2025",
+    type: "Film",
+    audio: "/audio/we-are-the-word-espera-2.wav",
+  },
   { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
