@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoMark from "@/assets/logo-v2.jpg";
 import logoMain from "@/assets/logo-main.png";
+import logoHeader from "@/assets/logo-header.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -33,7 +34,7 @@ function Index() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 bg-white">
           <a href="#top" className="flex items-center">
             <img
-              src={logoMark}
+              src={logoHeader}
               alt="Lucas Mercanti Music"
               className="h-14 w-auto object-contain"
             />
