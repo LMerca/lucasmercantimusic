@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoMark from "@/assets/logo-mark-new.jpg";
+import logoMark from "@/assets/logo-main.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -29,7 +29,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
       <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 bg-[#e8e8e8]">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 bg-white">
           <a href="#top" className="flex items-center">
             <img
               src={logoMark}
@@ -38,9 +38,9 @@ function Index() {
             />
           </a>
           <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
-            <li><a href="#about" className="hover:text-gold transition-colors">About</a></li>
-            <li><a href="#reels" className="hover:text-gold transition-colors">Reels</a></li>
-            <li><a href="#works" className="hover:text-gold transition-colors">Works</a></li>
+            <li><a href="#about" className="hover:text-gold transition-colors font-bold text-black">About</a></li>
+            <li><a href="#reels" className="hover:text-gold transition-colors font-bold text-black">Reels</a></li>
+            <li><a href="#works" className="hover:text-gold transition-colors font-bold">Works</a></li>
           </ul>
         </nav>
       </header>
@@ -51,7 +51,7 @@ function Index() {
           <img
             src={logoMark}
             alt="Lucas Mercanti Music"
-            className="mb-10 h-20 w-20 md:h-24 md:w-24 object-contain"
+            className="mb-10 h-20 w-20 md:h-24 md:w-24 object-contain mx-0"
           />
           <p className="mb-8 text-xs tracking-[0.4em] uppercase text-gold">
             Lucas Mercanti · Composer for Film & Video Games
