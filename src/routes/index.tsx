@@ -17,8 +17,22 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const selectedWorks = [
-  { title: "Aetherbound", role: "Original Score", year: "2025", type: "Video Game" },
+type Work = {
+  title: string;
+  role: string;
+  year: string;
+  type: string;
+  audio?: string;
+};
+
+const selectedWorks: Work[] = [
+  {
+    title: "We Are the Word — Espera",
+    role: "Original Score",
+    year: "2025",
+    type: "Film",
+    audio: "/audio/we-are-the-word-espera-2.wav",
+  },
   { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
@@ -140,18 +154,32 @@ function Index() {
             {selectedWorks.map((w) => (
               <li
                 key={w.title}
-                className="group grid grid-cols-12 items-baseline gap-4 py-6 transition-colors hover:bg-card/40 px-2"
+                className="group py-6 px-2 transition-colors hover:bg-card/40"
               >
-                <span className="col-span-1 text-xs text-gold tracking-widest">{w.year}</span>
-                <h3 className="col-span-6 md:col-span-5 text-xl md:text-2xl font-extralight tracking-wide group-hover:text-gold transition-colors">
-                  {w.title}
-                </h3>
-                <span className="col-span-3 hidden md:inline text-xs tracking-[0.3em] uppercase text-muted-foreground">
-                  {w.role}
-                </span>
-                <span className="col-span-5 md:col-span-3 text-right text-xs tracking-[0.3em] uppercase text-muted-foreground">
-                  {w.type}
-                </span>
+                <div className="grid grid-cols-12 items-baseline gap-4">
+                  <span className="col-span-1 text-xs text-gold tracking-widest">{w.year}</span>
+                  <h3 className="col-span-6 md:col-span-5 text-xl md:text-2xl font-extralight tracking-wide group-hover:text-gold transition-colors">
+                    {w.title}
+                  </h3>
+                  <span className="col-span-3 hidden md:inline text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                    {w.role}
+                  </span>
+                  <span className="col-span-5 md:col-span-3 text-right text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                    {w.type}
+                  </span>
+                </div>
+                {w.audio && (
+                  <div className="mt-4 pl-[8.333%]">
+                    <audio
+                      controls
+                      preload="metadata"
+                      src={w.audio}
+                      className="w-full max-w-2xl"
+                    >
+                      Your browser does not support the audio element.
+                    </audio>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
