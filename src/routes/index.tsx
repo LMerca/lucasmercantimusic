@@ -48,24 +48,33 @@ function Index() {
       </header>
 
       {/* HERO / INTRO */}
-      <section id="top" className="relative flex min-h-screen items-center px-6 pt-32">
-        <div className="mx-auto w-full max-w-6xl">
-          <img
-            src={logoMain}
-            alt="Lucas Mercanti Music"
-            className="mb-10 h-20 w-20 md:h-24 md:w-24 object-contain mx-0"
-          />
-          <p className="mb-8 text-xs tracking-[0.4em] uppercase text-gold">
-            Lucas Mercanti · Composer for Film & Video Games
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight leading-[1.05] tracking-tight">
-            Sound that <span className="text-gold italic font-thin">moves</span>
-            <br />
-            the picture.
-          </h1>
-          <div className="mt-16 h-px w-24 bg-gold" />
+      <section id="top" className="relative flex min-h-screen items-center px-6 pt-24 pb-16">
+        <div className="mx-auto w-full max-w-6xl grid gap-12 md:grid-cols-12 items-center">
+          <div className="md:col-span-6">
+            <p className="mb-8 text-xs tracking-[0.4em] uppercase text-gold">
+              Lucas Mercanti · Composer for Film & Video Games
+            </p>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight leading-[1.05] tracking-tight">
+              Sound that <span className="text-gold italic font-thin">moves</span>
+              <br />
+              the picture.
+            </h1>
+            <div className="mt-16 h-px w-24 bg-gold" />
+          </div>
+          <div className="md:col-span-6 md:justify-self-end w-full">
+            <div className="relative aspect-video w-full overflow-hidden border border-border bg-card">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/AKDxc-psnSc"
+                title="Featured reel"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* ABOUT */}
       <section id="about" className="px-6 py-32 border-t border-border">
