@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoMark from "@/assets/logo-main.png";
+import logoMark from "@/assets/logo-final.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -40,7 +40,7 @@ function Index() {
           <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
             <li><a href="#about" className="hover:text-gold transition-colors font-bold text-black">About</a></li>
             <li><a href="#reels" className="hover:text-gold transition-colors font-bold text-black">Reels</a></li>
-            <li><a href="#works" className="hover:text-gold transition-colors font-bold">Works</a></li>
+            <li><a href="#works" className="hover:text-gold transition-colors font-bold text-black">Works</a></li>
           </ul>
         </nav>
       </header>
