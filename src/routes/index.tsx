@@ -30,16 +30,12 @@ function Index() {
       {/* NAV */}
       <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 bg-[#e8e8e8]">
-          <a href="#top" className="flex items-center gap-3">
+          <a href="#top" className="flex items-center">
             <img
               src={logoMark}
               alt="Lucas Mercanti Music"
-              className="h-10 w-10 object-contain"
+              className="h-14 w-auto object-contain"
             />
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="text-sm tracking-[0.3em] uppercase font-light">Lucas Mercanti</span>
-              <span className="text-[10px] tracking-[0.45em] uppercase text-gold">Music</span>
-            </span>
           </a>
           <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
             <li><a href="#about" className="hover:text-gold transition-colors">About</a></li>
