@@ -31,7 +31,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
       <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 bg-white">
+        <nav className="mx-auto flex w-full items-center justify-between px-6 py-4 bg-white">
           <a href="#top" className="flex items-center">
             <img
               src={logoHeader}
