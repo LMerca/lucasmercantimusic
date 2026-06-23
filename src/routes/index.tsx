@@ -27,7 +27,7 @@ type Work = {
 
 const selectedWorks: Work[] = [
   {
-    title: "We Are the Word — Espera",
+    title: 'My Take on - "Spirit of the North" (Main Screen)',
     role: "Original Score",
     year: "2025",
     type: "Film",
@@ -170,7 +170,7 @@ function Index() {
                 </div>
                 {w.videoId && (
                   <div className="mt-4 pl-[8.333%]">
-                    <div className="relative aspect-video w-full max-w-2xl overflow-hidden border border-border bg-card">
+                    <div className="relative aspect-video w-full max-w-md overflow-hidden border border-border bg-card">
                       <iframe
                         className="absolute inset-0 h-full w-full"
                         src={`https://www.youtube.com/embed/${w.videoId}`}
