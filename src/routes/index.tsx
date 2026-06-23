@@ -40,6 +40,13 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "zrsD7ugB0zA",
   },
+  {
+    title: 'My Take On - "Player Vs Game" (Lvl 1)',
+    role: "Original Score",
+    year: "2023",
+    type: "Videogame",
+    videoId: "eCKZARexjw4",
+  },
   { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
