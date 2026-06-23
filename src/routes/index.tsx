@@ -29,9 +29,16 @@ const selectedWorks: Work[] = [
   {
     title: 'My Take on - "Spirit of the North" (Main Screen)',
     role: "Original Score",
-    year: "2025",
-    type: "Film",
+    year: "2024",
+    type: "Videogame",
     videoId: "KNcHSI-1WNs",
+  },
+  {
+    title: 'My Take On - "Player Vs Game" (Main Menu)',
+    role: "Original Score",
+    year: "2023",
+    type: "Videogame",
+    videoId: "zrsD7ugB0zA",
   },
   { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
