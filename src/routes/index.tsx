@@ -27,7 +27,7 @@ type Work = {
 
 const selectedWorks: Work[] = [
   {
-    title: "We Are the Word — Espera",
+    title: 'My Take on - "Spirit of the North" (Main Screen)',
     role: "Original Score",
     year: "2025",
     type: "Film",
