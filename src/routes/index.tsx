@@ -22,7 +22,7 @@ type Work = {
   role: string;
   year: string;
   type: string;
-  audio?: string;
+  videoId?: string;
 };
 
 const selectedWorks: Work[] = [
@@ -31,7 +31,7 @@ const selectedWorks: Work[] = [
     role: "Original Score",
     year: "2025",
     type: "Film",
-    audio: "/audio/we-are-the-word-espera-2.wav",
+    videoId: "KNcHSI-1WNs",
   },
   { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
