@@ -33,6 +33,8 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "KNcHSI-1WNs",
   },
+  { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
+  { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
     role: "Original Score",
@@ -47,6 +49,8 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "eCKZARexjw4",
   },
+  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
+  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
   {
     title: 'Proyecto Graham - What Remains',
     role: "Original Score",
@@ -68,10 +72,6 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "bImnCpoXIF0",
   },
-  { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
-  { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
-  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
-  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
   { title: "Paper Lanterns", role: "Original Score", year: "2022", type: "Documentary" },
 ];
 
