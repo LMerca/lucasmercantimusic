@@ -170,7 +170,7 @@ function Index() {
                 </div>
                 {w.videoId && (
                   <div className="mt-4 pl-[8.333%]">
-                    <div className="relative aspect-video w-full max-w-2xl overflow-hidden border border-border bg-card">
+                    <div className="relative aspect-video w-full max-w-md overflow-hidden border border-border bg-card">
                       <iframe
                         className="absolute inset-0 h-full w-full"
                         src={`https://www.youtube.com/embed/${w.videoId}`}
