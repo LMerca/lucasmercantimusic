@@ -47,6 +47,13 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "eCKZARexjw4",
   },
+  {
+    title: 'Proyecto Graham - What Remains',
+    role: "Original Score",
+    year: "2022",
+    type: "Videogame",
+    videoId: "hIKuzCQ9jCc",
+  },
   { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
