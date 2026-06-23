@@ -168,16 +168,17 @@ function Index() {
                     {w.type}
                   </span>
                 </div>
-                {w.audio && (
+                {w.videoId && (
                   <div className="mt-4 pl-[8.333%]">
-                    <audio
-                      controls
-                      preload="metadata"
-                      src={w.audio}
-                      className="w-full max-w-2xl"
-                    >
-                      Your browser does not support the audio element.
-                    </audio>
+                    <div className="relative aspect-video w-full max-w-2xl overflow-hidden border border-border bg-card">
+                      <iframe
+                        className="absolute inset-0 h-full w-full"
+                        src={`https://www.youtube.com/embed/${w.videoId}`}
+                        title={w.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
                   </div>
                 )}
               </li>
