@@ -33,6 +33,8 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "KNcHSI-1WNs",
   },
+  { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
+  { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
     role: "Original Score",
@@ -47,6 +49,8 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "eCKZARexjw4",
   },
+  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
+  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
   {
     title: 'Proyecto Graham - What Remains',
     role: "Original Score",
@@ -68,10 +72,6 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "bImnCpoXIF0",
   },
-  { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
-  { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
-  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
-  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
   { title: "Paper Lanterns", role: "Original Score", year: "2022", type: "Documentary" },
 ];
 
@@ -185,37 +185,35 @@ function Index() {
             <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Selected Projects</h2>
           </div>
 
-          <ul className="divide-y divide-border border-y border-border">
+          <ul className="grid gap-10 md:grid-cols-2">
             {selectedWorks.map((w) => (
               <li
                 key={w.title}
-                className="group py-6 px-2 transition-colors hover:bg-card/40"
+                className="group flex flex-col gap-4 border border-border bg-card/20 p-5 transition-colors hover:bg-card/40"
               >
-                <div className="grid grid-cols-12 items-baseline gap-4">
-                  <span className="col-span-1 text-xs text-gold tracking-widest">{w.year}</span>
-                  <h3 className="col-span-6 md:col-span-5 text-xl md:text-2xl font-extralight tracking-wide group-hover:text-gold transition-colors">
+                {w.videoId ? (
+                  <div className="relative aspect-video w-full overflow-hidden border border-border bg-card">
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src={`https://www.youtube.com/embed/${w.videoId}`}
+                      title={w.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <div className="relative aspect-video w-full border border-border bg-card/40" />
+                )}
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="text-lg md:text-xl font-extralight tracking-wide group-hover:text-gold transition-colors">
                     {w.title}
                   </h3>
-                  <span className="col-span-3 hidden md:inline text-xs tracking-[0.3em] uppercase text-muted-foreground">
-                    {w.role}
-                  </span>
-                  <span className="col-span-5 md:col-span-3 text-right text-xs tracking-[0.3em] uppercase text-muted-foreground">
-                    {w.type}
-                  </span>
+                  <span className="text-xs text-gold tracking-widest shrink-0">{w.year}</span>
                 </div>
-                {w.videoId && (
-                  <div className="mt-4 pl-[8.333%]">
-                    <div className="relative aspect-video w-full max-w-md overflow-hidden border border-border bg-card">
-                      <iframe
-                        className="absolute inset-0 h-full w-full"
-                        src={`https://www.youtube.com/embed/${w.videoId}`}
-                        title={w.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  </div>
-                )}
+                <div className="flex items-baseline justify-between gap-4 text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                  <span>{w.role}</span>
+                  <span>{w.type}</span>
+                </div>
               </li>
             ))}
           </ul>
