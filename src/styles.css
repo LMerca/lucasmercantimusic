@@ -4,8 +4,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Gotham-inspired stack: Montserrat is the closest free analog */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+/* Gotham-inspired stack: Montserrat is the closest free analog (loaded via <link> in __root.tsx) */
+
+
 
 @theme inline {
   --font-display: "Montserrat", "Gotham", "Helvetica Neue", sans-serif;
