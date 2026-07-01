@@ -21,7 +21,7 @@ type Work = {
   title: string;
   role: string;
   year: string;
-  type: string;
+  type?: string;
   videoId?: string;
 };
 
