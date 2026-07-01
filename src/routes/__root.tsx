@@ -82,8 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lucas Mercanti Music" },
       { name: "twitter:description", content: "A minimalistic web portfolio showcasing music composition work for games and films, featuring a black, white, and gold theme." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/oDSQtcfjspcnCKIvMaCzsalv7ie2/social-images/social-1782933394885-Logo_Horizontal_2.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/oDSQtcfjspcnCKIvMaCzsalv7ie2/social-images/social-1782933394885-Logo_Horizontal_2.webp" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0b153f56-664b-427a-a90b-57c91f205fbc/id-preview-88ef07a5--8fa52d57-19d6-40ab-91a2-2c045197fa1e.lovable.app-1782933456264.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0b153f56-664b-427a-a90b-57c91f205fbc/id-preview-88ef07a5--8fa52d57-19d6-40ab-91a2-2c045197fa1e.lovable.app-1782933456264.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
