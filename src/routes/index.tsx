@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import logoMark from "@/assets/logo-v2.jpg";
 import logoMain from "@/assets/logo-main.png";
 import logoHeader from "@/assets/logo-header-new.jpg";
@@ -17,63 +18,114 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+type Lang = "en" | "es";
+
 type Work = {
   title: string;
-  role: string;
+  role: { en: string; es: string };
   year: string;
-  type?: string;
+  type?: { en: string; es: string };
   videoId?: string;
 };
+
+const T = {
+  en: {
+    nav: { about: "About", reels: "Reels", works: "Works" },
+    tagline: "Lucas Mercanti · Composer for Film & Video Games",
+    hero1: "Sound that ",
+    heroEm: "moves",
+    hero2: "the picture.",
+    aboutLabel: "01 — About",
+    aboutTitle: "Biography",
+    bio: [
+      "I'm a composer writing original music for video games, films and trailers. My work lives at the intersection of orchestral writing and contemporary electronic textures — scores built to disappear into the picture and surface only when the story needs them to.",
+      "Over the last decade I've collaborated with independent studios, AAA publishers and directors across documentary and narrative film, shaping sonic identities for worlds that range from intimate character drama to large-scale interactive adventures.",
+      "Trained classically and obsessed with synthesis, I treat every project as a new instrument — built from the inside out.",
+    ],
+    reelsLabel: "02 — Reels",
+    reelsTitle: "Showreels",
+    videogameReel: "Video Game Reel",
+    filmReel: "Film & Trailer Reel",
+    worksLabel: "03 — Works",
+    worksTitle: "Selected Projects",
+  },
+  es: {
+    nav: { about: "Sobre mí", reels: "Reels", works: "Trabajos" },
+    tagline: "Lucas Mercanti · Compositor para Cine y Videojuegos",
+    hero1: "Sonido que ",
+    heroEm: "mueve",
+    hero2: "la imagen.",
+    aboutLabel: "01 — Sobre mí",
+    aboutTitle: "Biografía",
+    bio: [
+      "Soy compositor de música original para videojuegos, películas y trailers. Mi trabajo vive en la intersección entre la escritura orquestal y las texturas electrónicas contemporáneas — bandas sonoras construidas para desaparecer en la imagen y aflorar solo cuando la historia lo necesita.",
+      "Durante la última década he colaborado con estudios independientes, editoras AAA y directores de cine documental y narrativo, dando forma a identidades sonoras para mundos que van desde el drama íntimo hasta grandes aventuras interactivas.",
+      "Formado clásicamente y obsesionado con la síntesis, trato cada proyecto como un instrumento nuevo — construido desde adentro hacia afuera.",
+    ],
+    reelsLabel: "02 — Reels",
+    reelsTitle: "Reels",
+    videogameReel: "Reel de Videojuegos",
+    filmReel: "Reel de Cine y Trailers",
+    worksLabel: "03 — Trabajos",
+    worksTitle: "Proyectos Seleccionados",
+  },
+} as const;
+
+const ORIGINAL_SCORE = { en: "Original Score", es: "Banda Sonora Original" };
+const ORIGINAL_COMP = { en: "Original Composition", es: "Composición Original" };
+const VIDEOGAME = { en: "Videogame", es: "Videojuego" };
 
 const selectedWorks: Work[] = [
   {
     title: 'My Take on - "Spirit of the North" (Main Screen)',
-    role: "Original Score",
+    role: ORIGINAL_SCORE,
     year: "2024",
-    type: "Videogame",
+    type: VIDEOGAME,
     videoId: "KNcHSI-1WNs",
   },
-  { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", videoId: "hW0uWq7YvXs" },
-  { title: "Fight On", role: "Original Composition", year: "2024", videoId: "8wtPTfCFDS0" },
+  { title: "I'm afraid it's going to rain", role: ORIGINAL_COMP, year: "2024", videoId: "hW0uWq7YvXs" },
+  { title: "Fight On", role: ORIGINAL_COMP, year: "2024", videoId: "8wtPTfCFDS0" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
-    role: "Original Score",
+    role: ORIGINAL_SCORE,
     year: "2023",
-    type: "Videogame",
+    type: VIDEOGAME,
     videoId: "zrsD7ugB0zA",
   },
   {
     title: 'My Take On - "Player Vs Game" (Lvl 1)',
-    role: "Original Score",
+    role: ORIGINAL_SCORE,
     year: "2023",
-    type: "Videogame",
+    type: VIDEOGAME,
     videoId: "eCKZARexjw4",
   },
   {
     title: 'Proyecto Graham - What Remains',
-    role: "Original Score",
+    role: ORIGINAL_SCORE,
     year: "2022",
-    type: "Videogame",
+    type: VIDEOGAME,
     videoId: "hIKuzCQ9jCc",
   },
   {
     title: 'Proyecto Graham - Graham is that You',
-    role: "Original Score",
+    role: ORIGINAL_SCORE,
     year: "2022",
-    type: "Videogame",
+    type: VIDEOGAME,
     videoId: "F9I70zBWQoo",
   },
   {
     title: 'Proyecto Graham - Just Kill It Already',
-    role: "Original Score",
+    role: ORIGINAL_SCORE,
     year: "2022",
-    type: "Videogame",
+    type: VIDEOGAME,
     videoId: "bImnCpoXIF0",
   },
-  
 ];
 
 function Index() {
+  const [lang, setLang] = useState<Lang>("en");
+  const t = T[lang];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -86,11 +138,32 @@ function Index() {
               className="h-14 w-auto object-contain"
             />
           </a>
-          <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
-            <li><a href="#about" className="hover:text-gold transition-colors font-bold text-black">About</a></li>
-            <li><a href="#reels" className="hover:text-gold transition-colors font-bold text-black">Reels</a></li>
-            <li><a href="#works" className="hover:text-gold transition-colors font-bold text-black">Works</a></li>
-          </ul>
+          <div className="flex items-center gap-8">
+            <ul className="hidden gap-10 text-xs tracking-[0.25em] uppercase md:flex">
+              <li><a href="#about" className="hover:text-gold transition-colors font-bold text-black">{t.nav.about}</a></li>
+              <li><a href="#reels" className="hover:text-gold transition-colors font-bold text-black">{t.nav.reels}</a></li>
+              <li><a href="#works" className="hover:text-gold transition-colors font-bold text-black">{t.nav.works}</a></li>
+            </ul>
+            <div className="flex items-center gap-1 text-xs tracking-[0.25em] uppercase font-bold">
+              <button
+                type="button"
+                onClick={() => setLang("en")}
+                className={`px-1 transition-colors ${lang === "en" ? "text-gold" : "text-black hover:text-gold"}`}
+                aria-pressed={lang === "en"}
+              >
+                EN
+              </button>
+              <span className="text-black/40">/</span>
+              <button
+                type="button"
+                onClick={() => setLang("es")}
+                className={`px-1 transition-colors ${lang === "es" ? "text-gold" : "text-black hover:text-gold"}`}
+                aria-pressed={lang === "es"}
+              >
+                ES
+              </button>
+            </div>
+          </div>
         </nav>
       </header>
 
@@ -99,12 +172,12 @@ function Index() {
         <div className="mx-auto w-full max-w-6xl grid gap-12 md:grid-cols-12 items-center">
           <div className="md:col-span-6">
             <p className="mb-8 text-xs tracking-[0.4em] uppercase text-gold">
-              Lucas Mercanti · Composer for Film & Video Games
+              {t.tagline}
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight leading-[1.05] tracking-tight">
-              Sound that <span className="text-gold italic font-thin">moves</span>
+              {t.hero1}<span className="text-gold italic font-thin">{t.heroEm}</span>
               <br />
-              the picture.
+              {t.hero2}
             </h1>
             <div className="mt-16 h-px w-24 bg-gold" />
           </div>
@@ -127,26 +200,11 @@ function Index() {
       <section id="about" className="px-6 py-32 border-t border-border">
         <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-12">
           <div className="md:col-span-4">
-            <p className="text-xs tracking-[0.4em] uppercase text-gold">01 — About</p>
-            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Biography</h2>
+            <p className="text-xs tracking-[0.4em] uppercase text-gold">{t.aboutLabel}</p>
+            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">{t.aboutTitle}</h2>
           </div>
           <div className="md:col-span-8 space-y-6 text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-            <p>
-              I'm a composer writing original music for video games, films and trailers.
-              My work lives at the intersection of orchestral writing and contemporary
-              electronic textures — scores built to disappear into the picture and surface
-              only when the story needs them to.
-            </p>
-            <p>
-              Over the last decade I've collaborated with independent studios, AAA
-              publishers and directors across documentary and narrative film, shaping
-              sonic identities for worlds that range from intimate character drama to
-              large-scale interactive adventures.
-            </p>
-            <p>
-              Trained classically and obsessed with synthesis, I treat every project as a
-              new instrument — built from the inside out.
-            </p>
+            {t.bio.map((p, i) => <p key={i}>{p}</p>)}
           </div>
         </div>
       </section>
@@ -155,18 +213,18 @@ function Index() {
       <section id="reels" className="px-6 py-32 border-t border-border">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-xs tracking-[0.4em] uppercase text-gold">02 — Reels</p>
-            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Showreels</h2>
+            <p className="text-xs tracking-[0.4em] uppercase text-gold">{t.reelsLabel}</p>
+            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">{t.reelsTitle}</h2>
           </div>
 
           <div className="grid gap-16 md:grid-cols-2">
             <ReelCard
-              label="Video Game Reel"
+              label={t.videogameReel}
               year="2025"
               videoId="kAy6q93djLY"
             />
             <ReelCard
-              label="Film & Trailer Reel"
+              label={t.filmReel}
               year="2025"
               videoId="Rh0H9i9FI2I"
               start={5}
@@ -179,8 +237,8 @@ function Index() {
       <section id="works" className="px-6 py-32 border-t border-border">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16">
-            <p className="text-xs tracking-[0.4em] uppercase text-gold">03 — Works</p>
-            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">Selected Projects</h2>
+            <p className="text-xs tracking-[0.4em] uppercase text-gold">{t.worksLabel}</p>
+            <h2 className="mt-6 text-3xl md:text-4xl font-extralight">{t.worksTitle}</h2>
           </div>
 
           <ul className="grid gap-10 md:grid-cols-2">
@@ -209,8 +267,8 @@ function Index() {
                   <span className="text-xs text-gold tracking-widest shrink-0">{w.year}</span>
                 </div>
                 <div className="flex items-baseline justify-between gap-4 text-xs tracking-[0.3em] uppercase text-muted-foreground">
-                  <span>{w.role}</span>
-                  {w.type && <span>{w.type}</span>}
+                  <span>{w.role[lang]}</span>
+                  {w.type && <span>{w.type[lang]}</span>}
                 </div>
               </li>
             ))}
@@ -226,8 +284,8 @@ function Index() {
             <p>© {new Date().getFullYear()} Lucas Mercanti Music</p>
           </div>
           <p>
-            <a href="mailto:hello@lucasmercanti.com" className="hover:text-gold transition-colors">
-              hello@lucasmercanti.com
+            <a href="mailto:lucasmercantimusic@gmail.com" className="hover:text-gold transition-colors">
+              lucasmercantimusic@gmail.com
             </a>
           </p>
         </div>
