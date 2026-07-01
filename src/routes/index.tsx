@@ -21,7 +21,7 @@ type Work = {
   title: string;
   role: string;
   year: string;
-  type: string;
+  type?: string;
   videoId?: string;
 };
 
@@ -33,8 +33,8 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "KNcHSI-1WNs",
   },
-  { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", type: "Original Composition", videoId: "hW0uWq7YvXs" },
-  { title: "Fight On", role: "Original Composition", year: "2024", type: "Original Composition", videoId: "8wtPTfCFDS0" },
+  { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", videoId: "hW0uWq7YvXs" },
+  { title: "Fight On", role: "Original Composition", year: "2024", videoId: "8wtPTfCFDS0" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
     role: "Original Score",
@@ -49,8 +49,6 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "eCKZARexjw4",
   },
-  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
-  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
   {
     title: 'Proyecto Graham - What Remains',
     role: "Original Score",
@@ -72,7 +70,7 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "bImnCpoXIF0",
   },
-  { title: "Paper Lanterns", role: "Original Score", year: "2022", type: "Documentary" },
+  
 ];
 
 function Index() {
@@ -212,7 +210,7 @@ function Index() {
                 </div>
                 <div className="flex items-baseline justify-between gap-4 text-xs tracking-[0.3em] uppercase text-muted-foreground">
                   <span>{w.role}</span>
-                  <span>{w.type}</span>
+                  {w.type && <span>{w.type}</span>}
                 </div>
               </li>
             ))}
