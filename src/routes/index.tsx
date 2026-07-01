@@ -210,7 +210,7 @@ function Index() {
                 </div>
                 <div className="flex items-baseline justify-between gap-4 text-xs tracking-[0.3em] uppercase text-muted-foreground">
                   <span>{w.role}</span>
-                  <span>{w.type}</span>
+                  {w.type && <span>{w.type}</span>}
                 </div>
               </li>
             ))}
