@@ -70,7 +70,7 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "bImnCpoXIF0",
   },
-  { title: "Paper Lanterns", role: "Original Score", year: "2022", type: "Documentary" },
+  
 ];
 
 function Index() {
