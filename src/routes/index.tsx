@@ -49,8 +49,6 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "eCKZARexjw4",
   },
-  { title: "Hemisphere", role: "Original Score", year: "2023", type: "Short Film" },
-  { title: "Echoes of Ash", role: "Composer", year: "2023", type: "AAA Trailer" },
   {
     title: 'Proyecto Graham - What Remains',
     role: "Original Score",
