@@ -34,7 +34,7 @@ const selectedWorks: Work[] = [
     videoId: "KNcHSI-1WNs",
   },
   { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", videoId: "hW0uWq7YvXs" },
-  { title: "Fight On", role: "Original Composition", year: "2024", type: "Original Composition", videoId: "8wtPTfCFDS0" },
+  { title: "Fight On", role: "Original Composition", year: "2024", videoId: "8wtPTfCFDS0" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
     role: "Original Score",
