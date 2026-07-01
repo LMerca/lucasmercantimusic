@@ -33,7 +33,7 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "KNcHSI-1WNs",
   },
-  { title: "The Long Quiet", role: "Composer", year: "2024", type: "Feature Film" },
+  { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", type: "Feature Film", videoId: "hW0uWq7YvXs" },
   { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
