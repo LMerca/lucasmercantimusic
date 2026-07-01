@@ -33,8 +33,8 @@ const selectedWorks: Work[] = [
     type: "Videogame",
     videoId: "KNcHSI-1WNs",
   },
-  { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", type: "Feature Film", videoId: "hW0uWq7YvXs" },
-  { title: "Neon Hollow", role: "Music & Sound Design", year: "2024", type: "Indie Game" },
+  { title: "I'm afraid it's going to rain", role: "Original Composition", year: "2024", type: "Original Composition", videoId: "hW0uWq7YvXs" },
+  { title: "Fight On", role: "Original Composition", year: "2024", type: "Original Composition", videoId: "8wtPTfCFDS0" },
   {
     title: 'My Take On - "Player Vs Game" (Main Menu)',
     role: "Original Score",
