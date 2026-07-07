@@ -58,9 +58,9 @@ const T = {
     aboutLabel: "01 — Sobre mí",
     aboutTitle: "Biografía",
     bio: [
-      "Soy compositor de música original para videojuegos, películas y trailers. Mi trabajo vive en la intersección entre la escritura orquestal y las texturas electrónicas contemporáneas — bandas sonoras construidas para desaparecer en la imagen y aflorar solo cuando la historia lo necesita.",
-      "Durante la última década he colaborado con estudios independientes, editoras AAA y directores de cine documental y narrativo, dando forma a identidades sonoras para mundos que van desde el drama íntimo hasta grandes aventuras interactivas.",
-      "Formado clásicamente y obsesionado con la síntesis, trato cada proyecto como un instrumento nuevo — construido desde adentro hacia afuera.",
+      "Compositor musical radicado en Argentina, orientado principalmente a bandas sonoras de videojuegos y cine.",
+      "Me especializo en contar historias a través de la música — tanto las que tu proyecto cuenta de forma explícita como las que querés transmitir de manera más sutil. Mi trabajo tiene un fuerte enfoque en la versatilidad: desde bandas sonoras orquestales hasta composición más electrónica, me dedico a crear una identidad musical que acompañe y potencie tu proyecto.",
+      "Mi experiencia viene de años de estudio, de colaborar con una variedad de proyectos independientes y de pura pasión por el oficio.",
     ],
     reelsLabel: "02 — Reels",
     reelsTitle: "Reels",
