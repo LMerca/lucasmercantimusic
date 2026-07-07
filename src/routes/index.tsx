@@ -38,9 +38,9 @@ const T = {
     aboutLabel: "01 — About",
     aboutTitle: "Biography",
     bio: [
-      "I'm a composer writing original music for video games, films and trailers. My work lives at the intersection of orchestral writing and contemporary electronic textures — scores built to disappear into the picture and surface only when the story needs them to.",
-      "Over the last decade I've collaborated with independent studios, AAA publishers and directors across documentary and narrative film, shaping sonic identities for worlds that range from intimate character drama to large-scale interactive adventures.",
-      "Trained classically and obsessed with synthesis, I treat every project as a new instrument — built from the inside out.",
+      "Music composer based in Argentina, mainly oriented to videogame and film soundtracks.",
+      "I specialize in telling stories through music — either the ones your project is telling explicitly, or the ones you want to make more subtle. My work has a heavy focus on versatility: from orchestral soundtracks to more electronic composition, I dedicate myself to creating a musical identity that goes along your project and enhances it.",
+      "My experience comes from years of study, collaborating with a variety of independent projects, and pure passion for the job.",
     ],
     reelsLabel: "02 — Reels",
     reelsTitle: "Showreels",
